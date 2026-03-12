@@ -131,7 +131,7 @@ def ticket_num():
 
 def buy_ticket(ticket_no,passenger_id,flight_no,seat_class,price_paid):
     response = (supabase
-                .table('tickets'
+                .table('tickets')
                 .insert({
                 "ticket_no":ticket_no,
                 "passenger_id":passenger_id,
@@ -140,7 +140,7 @@ def buy_ticket(ticket_no,passenger_id,flight_no,seat_class,price_paid):
                 "price_paid":price_paid
                 })
                 .execute()
-                ))
+                )
     return ("Successfully booked the ticket!")
 
 def cancel_booking(ticket_no):
